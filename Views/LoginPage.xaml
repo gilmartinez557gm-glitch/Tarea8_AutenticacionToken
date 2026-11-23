@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Tarea8_AutenticacionToken.Views.LoginPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Iniciar sesión">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30"
+            Spacing="18"
+            VerticalOptions="Center">
+
+            <Label
+                Text="Bienvenido"
+                FontSize="30"
+                FontAttributes="Bold"
+                TextColor="#2563EB"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Inicie sesión para continuar"
+                FontSize="15"
+                TextColor="Gray"
+                HorizontalOptions="Center" />
+
+            <Label Text="Usuario" />
+
+            <Entry
+                Placeholder="Ingrese su usuario"
+                Text="{Binding Username}" />
+
+            <Label Text="Contraseña" />
+
+            <Entry
+                Placeholder="Ingrese su contraseña"
+                Text="{Binding Password}"
+                IsPassword="True" />
+
+            <Button
+                Text="Iniciar sesión"
+                Command="{Binding LoginCommand}"
+                BackgroundColor="#2563EB"
+                TextColor="White"
+                CornerRadius="10" />
+
+            <ActivityIndicator
+                IsRunning="{Binding IsBusy}"
+                IsVisible="{Binding IsBusy}"
+                Color="#2563EB" />
+
+            <Label
+                Text="{Binding Mensaje}"
+                TextColor="Red"
+                HorizontalTextAlignment="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
